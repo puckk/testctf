@@ -46,7 +46,7 @@ def main():
 
     # Get repo, token, and issue title from environment variables
     repo = os.environ.get("GITHUB_REPOSITORY")
-    token = os.environ.get("GH_TOKEN")  # Set this secret in GitHub Actions
+    token = os.environ.get("GITHUB_TOKEN")  # Set this secret in GitHub Actions
     issue_title = "CTF Challenge Output"
 
     if repo and token:
