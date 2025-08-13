@@ -22,4 +22,5 @@ jobs:
         env:
           GITHUB_TOKEN: ${{ secrets.TOKEN }}
           GITHUB_REPOSITORY: "puckk/testctf"
+          SECRET_KEY: ${{ secrets.SECRET_KEY }}
         run: python script.py
