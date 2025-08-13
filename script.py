@@ -30,14 +30,7 @@ def main():
     encrypted_flag = cipher.encrypt(FLAG.encode())
     shuffled_key = blend_key(key)
 
-    body = (
-        "Your shuffled key:\n"
-        + shuffled_key
-        + "\n\nHere's your encrypted flag:\n"
-        + encrypted_flag.hex()
-    )
-    
-    print(body)
+    body = f"Your shuffled key:\n{shuffled_key}\n\nHere's your encrypted flag:\n{encrypted_flag.hex()}"
 
     repo = "puckk/testctf"
     token = os.environ.get("GITHUB_TOKEN") 
