@@ -16,9 +16,11 @@ def blend_key(key_bytes):
 
 def create_github_issue(repo, title, body, token):
     url = f"https://api.github.com/repos/{repo}/issues"
+    print(f"Creating issue in {repo} with title '{title}'")
     headers = {
         "Authorization": f"Bearer {token}",
-        "Accept": "application/vnd.github+json"
+        "Accept": "application/vnd.github+json",
+        "X-GitHub-Api-Version": "2022-11-28"
     }
     data = {
         "title": title,
@@ -45,7 +47,7 @@ def main():
     print(body)
 
     # Get repo, token, and issue title from environment variables
-    repo = os.environ.get("GITHUB_REPOSITORY")
+    repo = "puckk/testctf"
     token = os.environ.get("GITHUB_TOKEN")  # Set this secret in GitHub Actions
     issue_title = "CTF Challenge Output"
 
