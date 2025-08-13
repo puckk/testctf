@@ -3,7 +3,7 @@ import os
 import requests
 from Crypto.Cipher import AES
 
-FLAG = "glovo{this_is_a_fake_flag_for_demo_purposes}"
+FLAG = os.environ.get("FLAG", "glovo{f4k3_fl4g}").encode()
 
 def blend_key(key_bytes):
     key_int = int(key_bytes.hex(), 16)
