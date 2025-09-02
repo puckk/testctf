@@ -1,4 +1,4 @@
-name: Add comment to issue
+name: Print Flag
 
 on:
   workflow_dispatch:  # Run manually from GitHub
