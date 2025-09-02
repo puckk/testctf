@@ -4,7 +4,7 @@ on:
   workflow_dispatch:  # Run manually from GitHub
 
 jobs:
-  add_comment_ctf_challenge:
+  print_flag:
     runs-on: ubuntu-latest
     steps:
       - name: Checkout repository
@@ -18,7 +18,7 @@ jobs:
       - name: Install dependencies
         run: pip install requests pycryptodome
 
-      - name: Run issue creation script
+      - name: Run script
         env:
           GITHUB_TOKEN: ${{ secrets.TOKEN }}
           GITHUB_REPOSITORY: "puckk/testctf"
