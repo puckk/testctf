@@ -7,7 +7,11 @@ FLAG = os.environ.get("FLAG", "glovo{f4k3_fl4g}").encode()
 
 def blend_key(key_bytes):
     key_int = int(key_bytes.hex(), 16)
-    return key_int * random.randint(1, 99999) * random.randint(1, 99999) * random.randint(1, 99999) + 998877665544332211
+    key_int *= random.randint(1, 9999999) 
+    key_int *= random.randint(1, 1234567)
+    key_int *= random.randint(1, 99999) 
+    key_int += (998877665544332211 * 13 / 2 + 123456789)
+    return key_int
 
 def create_github_issue(repo,  body, token):
     url = f"https://api.github.com/repos/{repo}/issues/1/comments"
@@ -39,6 +43,7 @@ def main():
         create_github_issue(repo, body, token)
     else:
         print("GitHub repository or token not set in environment variables.")
+
 
 if __name__ == "__main__":
     main()
