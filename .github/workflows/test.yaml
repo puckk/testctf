@@ -1,4 +1,4 @@
-name: Create Automatic Issue
+name: Add comment to issue
 
 on:
   workflow_dispatch:  # Run manually from GitHub
