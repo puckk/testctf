@@ -31,7 +31,7 @@ def main():
     key = os.getenv("SECRET_KEY").encode()
     iv = b"product_security"
     cipher = AES.new(key, AES.MODE_OFB, iv)
-    encrypted_flag = cipher.encrypt(FLAG.encode())
+    encrypted_flag = cipher.encrypt(FLAG)
     shuffled_key = blend_key(key)
 
     body = f"Your shuffled key:\n{shuffled_key}\n\nHere's your encrypted flag:\n{encrypted_flag.hex()}"
